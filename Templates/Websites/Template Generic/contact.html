@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8" />
 
-  <!-- Makes the site responsive -->
+  <!-- Makes the website responsive on phones and tablets -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Change page title -->
-  <title>Customer Brand | Contact</title>
+  <!-- Change this page title -->
+  <title>Red_Line_Digital | Contact</title>
 
-  <!-- Shared CSS -->
+  <!-- Main CSS file shared across every page -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- TOP INFO LINE -->
+  <div class="top-line">
+    <span>Independent digital builds for creators, servers, and online brands.</span>
+    <span>Now taking projects for 2026</span>
+  </div>
+
   <header class="site-header">
 
     <!-- Customer brand name -->
-    <div class="logo">Customer Brand</div>
+<a href="index.html" class="logo">
+  <span class="logo-main">
+    <span class="logo-red">RED</span><span class="logo-line">_LINE_</span><span class="logo-digital">DIGITAL</span>
+  </span>
+  <span class="logo-sub">websites · systems · communities</span>
+</a>
 
-    <!-- The active class is on Contact for this page -->
+    <!-- Navigation tabs -->
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
@@ -34,31 +45,38 @@
 
     <!-- Contact page heading -->
     <section class="page-heading page-animation">
-      <h1>Contact Us</h1>
-      <p>Use this page for email, Discord, phone number, or a contact form.</p>
+      <span class="section-number">04 / Contact</span>
+      <h1>Start Your Project</h1>
+      <p>
+        Tell us what you need built. This could be a Discord server, bot,
+        website, stream overlay, or full setup.
+      </p>
     </section>
 
-    <!-- Contact info box -->
-    <section class="contact-box page-animation">
+    <!-- Contact area -->
+    <section class="contact-box page-animation delay-1">
 
-      <!-- Change these contact details per customer -->
-      <p><strong>Email:</strong> customer@email.com</p>
-      <p><strong>Discord:</strong> customerdiscord</p>
-      <p><strong>Location:</strong> Customer Location</p>
+      <!-- Fake contact details -->
+      <p><strong>Email:</strong> hello@Red_Line_Digital.example</p>
+      <p><strong>Discord:</strong> Red_Line_Digital#0001</p>
+      <p><strong>Location:</strong> Manchester, United Kingdom</p>
 
-      <!-- Basic fake form layout -->
+      <!-- Fake form layout -->
       <form class="contact-form">
 
-        <!-- Customer name input -->
+        <!-- Name field -->
         <input type="text" placeholder="Your Name" />
 
-        <!-- Customer email input -->
+        <!-- Email field -->
         <input type="email" placeholder="Your Email" />
 
-        <!-- Message input -->
-        <textarea placeholder="Your Message"></textarea>
+        <!-- Project type field -->
+        <input type="text" placeholder="Project Type: Website, Discord, Bot, Overlay..." />
 
-        <!-- Form button -->
+        <!-- Message field -->
+        <textarea placeholder="Tell us about your project"></textarea>
+
+        <!-- Submit button -->
         <button type="submit">Send Message</button>
 
       </form>
@@ -68,7 +86,7 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Customer Business Name. All rights reserved.</p>
+    <p>&copy; 2026 Red_Line_Digital. All rights reserved.</p>
   </footer>
 
 </body>
