@@ -1,0 +1,687 @@
+/* =========================================================
+   RESET
+   Keeps browser spacing consistent.
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   GLOBAL WEBSITE STYLES
+   Change these to affect the whole website.
+========================================================= */
+
+body {
+  /* Change the main font here */
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Main website background color */
+  background-color: white;
+
+  /* Main text color */
+  color: black;
+
+  /* Controls general text spacing */
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ANIMATION CONTROL PANEL
+   Choose ONE animation style below.
+
+   How to use:
+   1. Find .page-animation
+   2. Comment out the active animation
+   3. Uncomment the animation you want
+========================================================= */
+
+.page-animation {
+  /* Required for animations that fade in */
+  opacity: 0;
+
+  /* DEFAULT ANIMATION - simple fade in */
+  /* animation: fadeIn 0.8s ease forwards; */
+
+  /* Fade in and slide up */
+  animation: fadeUp 0.8s ease forwards;
+
+  /* Fade in and slide down */
+  /* animation: fadeDown 0.8s ease forwards; */
+
+  /* Fade in from the left */
+  /* animation: fadeLeft 0.8s ease forwards; */
+
+  /* Fade in from the right */
+  /* animation: fadeRight 0.8s ease forwards; */
+
+  /* Slight zoom in */
+  /* animation: zoomIn 0.8s ease forwards; */
+
+  /* Pop effect */
+  /* animation: popIn 0.6s ease forwards; */
+
+  /* Slower smooth fade */
+  /* animation: slowFade 1.4s ease forwards; */
+}
+
+/* 
+  Animation delay options.
+  Add these classes in HTML if you want sections to animate later.
+
+  Example:
+  <section class="services page-animation delay-1">
+*/
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* Simple fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade down */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade from left */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade from right */
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom in */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pop in */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slow fade */
+@keyframes slowFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
+
+.site-header {
+  /* Border under the header */
+  border-bottom: 2px solid black;
+
+  /* Space inside the header */
+  padding: 20px 8%;
+
+  /* Places logo left and nav right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand name / logo text */
+.logo {
+  /* Brand text size */
+  font-size: 24px;
+
+  /* Brand text thickness */
+  font-weight: bold;
+
+  /* Makes brand name uppercase */
+  text-transform: uppercase;
+
+  /* Adds spacing between brand letters */
+  letter-spacing: 1px;
+}
+
+/* Navigation container */
+.nav {
+  /* Puts links in a row */
+  display: flex;
+
+  /* Space between nav buttons */
+  gap: 15px;
+
+  /* Allows tabs to wrap on smaller screens */
+  flex-wrap: wrap;
+}
+
+/* Navigation links */
+.nav a {
+  /* Nav text color */
+  color: black;
+
+  /* Removes underline */
+  text-decoration: none;
+
+  /* Border around tabs */
+  border: 1px solid black;
+
+  /* Space inside tabs */
+  padding: 8px 14px;
+
+  /* Smooth hover effect */
+  transition: 0.2s ease;
+}
+
+/* Current active page tab */
+.nav a.active {
+  /* Active tab background */
+  background-color: black;
+
+  /* Active tab text color */
+  color: white;
+}
+
+/* Nav hover effect */
+.nav a:hover {
+  /* Hover background */
+  background-color: black;
+
+  /* Hover text color */
+  color: white;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+  /* Space inside hero section */
+  padding: 80px 8%;
+
+  /* Two-column layout */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* Space between hero text and hero box */
+  gap: 40px;
+
+  /* Border below hero */
+  border-bottom: 2px solid black;
+
+  /* Aligns hero items vertically */
+  align-items: center;
+}
+
+/* Hero heading */
+.hero h1 {
+  /* Large title size */
+  font-size: 52px;
+
+  /* Tight title line spacing */
+  line-height: 1.1;
+
+  /* Space below title */
+  margin-bottom: 20px;
+
+  /* Makes headline feel more modern */
+  letter-spacing: -1px;
+}
+
+/* Hero paragraph */
+.hero p {
+  /* Paragraph text size */
+  font-size: 18px;
+
+  /* Space below paragraph */
+  margin-bottom: 30px;
+
+  /* Maximum paragraph width */
+  max-width: 520px;
+}
+
+/* Main button */
+.button {
+  /* Makes link act like button */
+  display: inline-block;
+
+  /* Button text color */
+  color: black;
+
+  /* Removes underline */
+  text-decoration: none;
+
+  /* Button outline */
+  border: 2px solid black;
+
+  /* Space inside button */
+  padding: 12px 24px;
+
+  /* Button text thickness */
+  font-weight: bold;
+
+  /* Smooth hover animation */
+  transition: 0.2s ease;
+}
+
+/* Button hover */
+.button:hover {
+  /* Button hover background */
+  background-color: black;
+
+  /* Button hover text */
+  color: white;
+
+  /* Small movement on hover */
+  transform: translateY(-2px);
+}
+
+/* Hero visual box */
+.hero-box {
+  /* Height of visual box */
+  height: 320px;
+
+  /* Border around visual box */
+  border: 3px solid black;
+
+  /* Centers text inside box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Text size inside visual box */
+  font-size: 22px;
+
+  /* Text thickness */
+  font-weight: bold;
+
+  /* Centers text */
+  text-align: center;
+
+  /* Space inside box */
+  padding: 30px;
+
+  /* Gives the box a simple outlined-card effect */
+  box-shadow: 10px 10px 0 black;
+}
+
+/* =========================================================
+   PAGE HEADING SECTION
+========================================================= */
+
+.page-heading {
+  /* Space inside page heading */
+  padding: 70px 8%;
+
+  /* Border below heading */
+  border-bottom: 2px solid black;
+}
+
+/* Page heading title */
+.page-heading h1 {
+  /* Page title size */
+  font-size: 46px;
+
+  /* Space below title */
+  margin-bottom: 15px;
+
+  /* Slightly tighter title style */
+  letter-spacing: -1px;
+}
+
+/* Page heading paragraph */
+.page-heading p {
+  /* Page intro text size */
+  font-size: 18px;
+
+  /* Controls paragraph width */
+  max-width: 700px;
+}
+
+/* =========================================================
+   SERVICES / CARDS
+========================================================= */
+
+.services {
+  /* Space inside services section */
+  padding: 70px 8%;
+
+  /* Border below section */
+  border-bottom: 2px solid black;
+}
+
+/* Section titles */
+.services h2,
+.about h2 {
+  /* Section heading size */
+  font-size: 36px;
+
+  /* Space below heading */
+  margin-bottom: 30px;
+}
+
+/* Card grid layout */
+.card-grid {
+  /* Creates card columns */
+  display: grid;
+
+  /* Three columns on desktop */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Space between cards */
+  gap: 25px;
+}
+
+/* Individual card */
+.card {
+  /* Card border */
+  border: 2px solid black;
+
+  /* Space inside card */
+  padding: 30px;
+
+  /* Smooth hover animation */
+  transition: 0.2s ease;
+
+  /* Keeps cards white */
+  background-color: white;
+}
+
+/* Card hover effect */
+.card:hover {
+  /* Moves card up slightly */
+  transform: translateY(-5px);
+
+  /* Strong black outline shadow */
+  box-shadow: 6px 6px 0 black;
+}
+
+/* Card title */
+.card h3 {
+  /* Card title size */
+  font-size: 24px;
+
+  /* Space below card title */
+  margin-bottom: 15px;
+}
+
+/* Card text */
+.card p {
+  /* Card text size */
+  font-size: 16px;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about {
+  /* Space inside about section */
+  padding: 70px 8%;
+
+  /* Border below about section */
+  border-bottom: 2px solid black;
+}
+
+/* About paragraph */
+.about p {
+  /* Maximum paragraph width */
+  max-width: 800px;
+
+  /* About text size */
+  font-size: 18px;
+}
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-box {
+  /* Space inside contact section */
+  padding: 70px 8%;
+
+  /* Border below contact area */
+  border-bottom: 2px solid black;
+}
+
+/* Contact info text */
+.contact-box p {
+  /* Contact text size */
+  font-size: 18px;
+
+  /* Space below contact lines */
+  margin-bottom: 10px;
+}
+
+/* Contact form layout */
+.contact-form {
+  /* Space above form */
+  margin-top: 30px;
+
+  /* Form width */
+  max-width: 600px;
+
+  /* Stacks form fields vertically */
+  display: flex;
+  flex-direction: column;
+
+  /* Space between form fields */
+  gap: 15px;
+}
+
+/* Form inputs and textarea */
+.contact-form input,
+.contact-form textarea {
+  /* Input border */
+  border: 2px solid black;
+
+  /* Input spacing */
+  padding: 12px;
+
+  /* Input font size */
+  font-size: 16px;
+
+  /* Uses same font as website */
+  font-family: inherit;
+
+  /* Removes default outline */
+  outline: none;
+}
+
+/* Input focus effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  /* Adds strong focus shadow */
+  box-shadow: 4px 4px 0 black;
+}
+
+/* Message box */
+.contact-form textarea {
+  /* Height of message box */
+  min-height: 140px;
+
+  /* Allows vertical resize only */
+  resize: vertical;
+}
+
+/* Form button */
+.contact-form button {
+  /* Button background */
+  background-color: white;
+
+  /* Button text color */
+  color: black;
+
+  /* Button border */
+  border: 2px solid black;
+
+  /* Button spacing */
+  padding: 12px 24px;
+
+  /* Button text size */
+  font-size: 16px;
+
+  /* Button text thickness */
+  font-weight: bold;
+
+  /* Makes cursor change on hover */
+  cursor: pointer;
+
+  /* Smooth hover animation */
+  transition: 0.2s ease;
+}
+
+/* Form button hover */
+.contact-form button:hover {
+  /* Hover background */
+  background-color: black;
+
+  /* Hover text color */
+  color: white;
+
+  /* Slight movement on hover */
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  /* Space inside footer */
+  padding: 25px 8%;
+
+  /* Centers footer text */
+  text-align: center;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Applies to tablets and phones.
+========================================================= */
+
+@media (max-width: 800px) {
+
+  /* Stack header items vertically */
+  .site-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Center nav tabs on mobile */
+  .nav {
+    justify-content: center;
+  }
+
+  /* Change hero from two columns to one column */
+  .hero {
+    grid-template-columns: 1fr;
+
+    /* Smaller hero spacing on mobile */
+    padding: 50px 8%;
+  }
+
+  /* Smaller hero title on mobile */
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  /* Smaller page titles on mobile */
+  .page-heading h1 {
+    font-size: 36px;
+  }
+
+  /* Stack cards vertically on mobile */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Smaller hero box on mobile */
+  .hero-box {
+    height: 240px;
+
+    /* Smaller shadow on mobile */
+    box-shadow: 6px 6px 0 black;
+  }
+}
