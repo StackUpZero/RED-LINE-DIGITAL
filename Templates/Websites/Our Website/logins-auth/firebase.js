@@ -4,13 +4,15 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 // Your Firebase project settings
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "PASTE_YOURS_HERE",
-  authDomain: "PASTE_YOURS_HERE",
-  projectId: "PASTE_YOURS_HERE",
-  storageBucket: "PASTE_YOURS_HERE",
-  messagingSenderId: "PASTE_YOURS_HERE",
-  appId: "PASTE_YOURS_HERE"
+  apiKey: "AIzaSyC5sF9vV21tRPfynNIbnQWAmjuBPj1IlQk",
+  authDomain: "red-line-digital.firebaseapp.com",
+  projectId: "red-line-digital",
+  storageBucket: "red-line-digital.firebasestorage.app",
+  messagingSenderId: "693566593434",
+  appId: "1:693566593434:web:a72ca272f9798c82464223",
+  measurementId: "G-Y0Z1MLE6K9"
 };
 
 // Start Firebase
