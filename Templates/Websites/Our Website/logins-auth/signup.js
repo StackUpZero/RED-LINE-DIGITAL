@@ -62,3 +62,29 @@ if (signupForm) {
     }
   });
 }
+
+const passwordToggles = document.querySelectorAll(".password-toggle");
+
+passwordToggles.forEach((button) => {
+  const input = document.getElementById(button.dataset.target);
+
+  button.addEventListener("mousedown", () => {
+    input.type = "text";
+  });
+
+  button.addEventListener("mouseup", () => {
+    input.type = "password";
+  });
+
+  button.addEventListener("mouseleave", () => {
+    input.type = "password";
+  });
+
+  button.addEventListener("touchstart", () => {
+    input.type = "text";
+  });
+
+  button.addEventListener("touchend", () => {
+    input.type = "password";
+  });
+});
