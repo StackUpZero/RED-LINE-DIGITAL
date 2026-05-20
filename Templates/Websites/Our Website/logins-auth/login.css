@@ -93,3 +93,15 @@
   font-size: 14px;
   font-weight: 800;
 }
+
+#reset-password-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #5f111c;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+#reset-password-link:hover {
+  color: #8f1d2c;
+}
