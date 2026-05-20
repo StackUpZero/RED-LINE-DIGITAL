@@ -2,7 +2,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
-  sendEmailVerification
+  sendEmailVerification,
+  sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import { auth } from "./firebase.js";
@@ -14,10 +15,9 @@ const errorMessage = document.getElementById("login-error");
 const logoutButton = document.getElementById("logout-button");
 const resendVerificationButton = document.getElementById("resend-verification-button");
 const userEmail = document.getElementById("user-email");
-
 const verifyPopup = document.getElementById("verify-popup");
-
 const urlParams = new URLSearchParams(window.location.search);
+const resetPasswordLink = document.getElementById("reset-password-link");
 
 if (urlParams.get("verify") === "sent" && verifyPopup) {
   verifyPopup.style.display = "block";
@@ -110,6 +110,32 @@ if (resendVerificationButton) {
       if (errorMessage) {
         errorMessage.textContent = "Could not send verification email right now.";
       }
+    }
+  });
+}
+
+// PASSWORD RESET LOGIC
+if (resetPasswordLink) {
+  resetPasswordLink.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    if (!emailInput || !errorMessage) return;
+
+    const email = emailInput.value.trim();
+
+    if (!email) {
+      errorMessage.textContent = "Enter your email first, then click forgot password.";
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+
+      errorMessage.textContent = "Password reset email sent. Check your inbox.";
+    } catch (error) {
+      console.error("Password reset failed:", error);
+
+      errorMessage.textContent = "Could not send reset email. Check the email address.";
     }
   });
 }
