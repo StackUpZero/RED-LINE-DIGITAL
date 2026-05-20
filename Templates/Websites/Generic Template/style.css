@@ -352,7 +352,7 @@ body {
   border: 1.5px solid var(--border);
   border-radius: 999px;
   padding: 6px 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   font-weight: 800;
 }
 
