@@ -865,27 +865,28 @@ body {
 _______________________
 
 /* SPLASH SCREEN */
+/* =========================
+   SPLASH SCREEN
+   ========================= */
+
 #splash-screen {
   position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
+  z-index: 999999 !important;
 
   width: 100vw !important;
   height: 100vh !important;
-  z-index: 999999 !important;
 
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 
   background:
-    radial-gradient(circle at center, rgba(180, 20, 20, 0.22), transparent 35%),
+    radial-gradient(circle at center, rgba(180, 20, 20, 0.22), transparent 38%),
     linear-gradient(135deg, #050505, #120505 45%, #000000);
 
-  color: #f5f5f5;
-  overflow: hidden;
+  color: #ffffff;
+  overflow: hidden !important;
 
   opacity: 1;
   visibility: visible;
@@ -895,17 +896,18 @@ _______________________
     visibility 0.8s ease;
 }
 
+/* This gets added by JavaScript */
 #splash-screen.hide {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .splash-inner {
   text-align: center;
   padding: 3rem 4rem;
-  max-width: 720px;
-  width: 90%;
+  max-width: 880px;
+  width: 86vw;
 
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 28px;
@@ -913,15 +915,16 @@ _______________________
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.02)
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.72)
     );
 
   box-shadow:
-    0 0 50px rgba(180, 20, 20, 0.28),
-    inset 0 0 25px rgba(255, 255, 255, 0.03);
+    0 0 50px rgba(180, 20, 20, 0.16),
+    inset 0 0 25px rgba(255, 255, 255, 0.35);
 
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .splash-topline {
@@ -932,18 +935,33 @@ _______________________
   margin-bottom: 1.2rem;
 }
 
-.splash-inner h1 {
-  margin: 0;
-  font-size: clamp(2rem, 6vw, 5rem);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
+.splash-logo {
+  margin: 0 auto;
+  max-width: 100%;
 
-  color: #ffffff;
+  font-size: clamp(2rem, 4.6vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  line-height: 1;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #080808;
+  white-space: nowrap;
 
   text-shadow:
-    0 0 12px rgba(255, 40, 40, 0.7),
-    0 0 35px rgba(180, 20, 20, 0.45);
+    0 0 10px rgba(255, 255, 255, 0.85),
+    0 0 24px rgba(160, 20, 30, 0.22);
+}
+
+.splash-red,
+.splash-digital {
+  color: #080808;
+}
+
+.splash-line {
+  color: #9f1728;
 }
 
 #splash-status {
@@ -1005,6 +1023,60 @@ _______________________
   }
 }
 
+/* Stops the page scrolling while splash is active */
 body.splash-active {
   overflow: hidden;
+}
+
+#splash-screen {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  z-index: 999999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+    linear-gradient(90deg, rgba(120, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(120, 0, 0, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(180, 20, 20, 0.12), transparent 35%),
+    #f7f3ef;
+
+  background-size:
+    cover,
+    32px 32px,
+    32px 32px,
+    cover,
+    cover;
+
+  overflow: hidden !important;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+#splash-screen.hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.splash-inner {
+  width: min(760px, 90vw);
+  min-height: 390px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
