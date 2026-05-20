@@ -33,6 +33,16 @@
     padding: 24px;
   }
   
+  .signup-box {
+    width: 100%;
+    max-width: 420px;
+    border: 2px solid #111;
+    border-radius: 16px;
+    background: #fbfbf7;
+    padding: 32px;
+    box-shadow: 8px 8px 0 #111;
+  }
+
   h1 {
     font-size: 32px;
     line-height: 1;
