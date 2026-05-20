@@ -45,9 +45,15 @@ if (loginForm) {
 // PROTECT CLIENT PAGE
 onAuthStateChanged(auth, (user) => {
   const isClientPage = window.location.pathname.includes("client.html");
+  const userEmail = document.getElementById("user-email");
 
   if (isClientPage && !user) {
     window.location.href = "login.html";
+    return;
+  }
+
+  if (user && userEmail) {
+    userEmail.textContent = user.email;
   }
 });
 
