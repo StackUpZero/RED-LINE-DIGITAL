@@ -81,3 +81,15 @@
       font-weight: 700;
       margin-bottom: 14px;
     }
+
+    .verify-popup {
+  display: none;
+  border: 2px solid #111;
+  border-radius: 10px;
+  background: #fff3f3;
+  color: #5f111c;
+  padding: 14px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 800;
+}

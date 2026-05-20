@@ -15,6 +15,15 @@ const logoutButton = document.getElementById("logout-button");
 const resendVerificationButton = document.getElementById("resend-verification-button");
 const userEmail = document.getElementById("user-email");
 
+const verifyPopup = document.getElementById("verify-popup");
+
+const urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.get("verify") === "sent" && verifyPopup) {
+  verifyPopup.style.display = "block";
+}
+
+
 // LOGIN LOGIC
 if (loginForm) {
   loginForm.addEventListener("submit", async (event) => {
