@@ -148,3 +148,17 @@ button:hover {
 .login-box a:hover {
   text-decoration: underline;
 }
+
+.reset-password-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #8f1d2c;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.reset-password-link:hover {
+  color: #5f111c;
+  text-decoration: underline;
+}
