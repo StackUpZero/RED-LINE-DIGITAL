@@ -2,6 +2,30 @@
    LOGIN PAGE
 ========================================================= */
 
+:root {
+  --bg: #f7f7f4;
+  --panel: #ffffff;
+  --text: #0b0b0b;
+  --muted: #555555;
+  --border: #111111;
+  --soft-border: #d7d7d0;
+
+  /* Brand accent: subtle dulled crimson */
+  --accent: #8f1d2c;
+  --accent-dark: #5f111c;
+  --accent-soft: rgba(143, 29, 44, 0.09);
+
+  --shadow: 8px 8px 0 #111111;
+  --shadow-small: 4px 4px 0 #111111;
+  --radius: 14px;
+  --section-padding: 82px 8%;
+}
+
+
+
+
+
+
 .login-heading {
     background:
       radial-gradient(circle at 78% 20%, rgba(143, 29, 44, 0.1), transparent 30%),

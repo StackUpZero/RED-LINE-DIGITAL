@@ -4,137 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Red_Line_Digital | Client Login</title>
+  <title>Red_Line_Digital | Login</title>
 
-  <!-- LOGIN PAGE CSS -->
-  <link rel="stylesheet" href="login.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f4;
+      color: #0b0b0b;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 420px;
+      border: 2px solid #111;
+      border-radius: 16px;
+      background: white;
+      padding: 32px;
+      box-shadow: 8px 8px 0 #111;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      color: #555;
+      margin-bottom: 26px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    input {
+      width: 100%;
+      border: 2px solid #111;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 18px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    button {
+      width: 100%;
+      border: 2px solid #111;
+      border-radius: 999px;
+      background: #111;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #111;
+    }
+
+    button:hover {
+      background: #5f111c;
+    }
+
+    #login-error {
+      min-height: 22px;
+      color: #8f1d2c;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="topline">
-      Independent digital builds for creators, servers, and online brands.
-      <span>Client access portal</span>
-    </div>
 
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <span class="logo-main">
-          <span class="logo-red">RED</span><span class="logo-line">_LINE_</span><span class="logo-digital">DIGITAL</span>
-        </span>
-        <span class="logo-sub">websites · systems · communities</span>
-      </a>
+  <main class="login-box">
+    <h1>Client Login</h1>
+    <p class="subtitle">Enter your client access details.</p>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html" class="active">Login</a>
-      </div>
-    </nav>
-  </header>
+    <form id="login-form">
+      <label for="login-email">Email</label>
+      <input
+        id="login-email"
+        type="email"
+        placeholder="client@email.com"
+        required
+      />
 
-  <main class="login-page">
-    <section class="login-hero">
-      <p class="page-number">05 / Client Login</p>
+      <label for="login-password">Password</label>
+      <input
+        id="login-password"
+        type="password"
+        placeholder="Password"
+        required
+      />
 
-      <div class="hero-intro">
-        <p class="eyebrow">Secure build system</p>
-        <h1>Access Your Project Hub</h1>
-        <p>
-          Sign in to view project notes, build updates, files, support messages,
-          and the systems connected to your digital setup.
-        </p>
-      </div>
-    </section>
+      <p id="login-error"></p>
 
-    <section class="login-layout">
-      <div class="portal-info">
-        <p class="eyebrow">Client Portal</p>
-
-        <h2>Everything connected in one clean place.</h2>
-
-        <p>
-          This portal is designed for clients and collaborators. Use it for active
-          builds, project checkpoints, requested changes, and aftercare.
-        </p>
-
-        <div class="feature-grid">
-          <div class="feature-card">
-            <span>01</span>
-            <h3>Project Updates</h3>
-            <p>Check progress without digging through message threads.</p>
-          </div>
-
-          <div class="feature-card">
-            <span>02</span>
-            <h3>Files & Notes</h3>
-            <p>Keep important details and assets organised.</p>
-          </div>
-        </div>
-
-        <div class="start-project-box">
-          <p>Not set up yet?</p>
-          <h3>Start a project first, then your access point gets created.</h3>
-          <a href="contact.html">Start a Project</a>
-        </div>
-      </div>
-
-      <div class="login-panel">
-        <p class="panel-label">Auth Panel</p>
-
-        <h2>Client Access</h2>
-
-        <form id="loginForm">
-          <label for="email">Email Address</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            placeholder="client@email.com" 
-            required
-          />
-
-          <label for="password">Password</label>
-          <input 
-            type="password" 
-            id="password" 
-            name="password" 
-            placeholder="Enter your password" 
-            required
-          />
-
-          <div class="form-row">
-            <label class="remember">
-              <input type="checkbox" name="remember" />
-              <span>Remember Me</span>
-            </label>
-
-            <a href="#">Forgot password?</a>
-          </div>
-
-          <button type="submit">Enter Portal</button>
-        </form>
-
-        <div class="panel-footer">
-          <p>Need access?</p>
-
-          <div>
-            <a href="contact.html">Request Access</a>
-            <a href="index.html">Back Home</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      <button type="submit">Log In</button>
+    </form>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Red_Line_Digital. All rights reserved.</p>
-  </footer>
-
-  <!-- LOGIN PAGE JS -->
-  <script src="login.js"></script>
+  <script type="module" src="auth.js"></script>
 </body>
 </html>
