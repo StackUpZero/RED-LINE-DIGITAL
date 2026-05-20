@@ -428,8 +428,7 @@ body {
 
 .preview-tags small:first-child {
   border-color: var(--accent);
-  color: var(--accent-dark);
-  background-color: rgb(85, 255, 0);
+  color: rgb(85, 255, 0);
 }
 /* =========================================================
    STATS STRIP
