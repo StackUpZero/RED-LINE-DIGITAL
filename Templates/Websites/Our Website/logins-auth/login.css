@@ -82,6 +82,10 @@
       margin-bottom: 14px;
     }
 
+  
+  /*  THIS KEEPS THE EMAIL VERF POPUP HIDDEN UNTIL AFTER
+      A USER HAS CREATED AN ACCOUNT*/
+  
     .verify-popup {
   display: none;
   border: 2px solid #111;
