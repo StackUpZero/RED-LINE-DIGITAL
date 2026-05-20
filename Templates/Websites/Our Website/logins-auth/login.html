@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Red_Line_Digital | Client Login</title>
+
+  <!-- LOGIN PAGE CSS -->
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="topline">
+      Independent digital builds for creators, servers, and online brands.
+      <span>Client access portal</span>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <span class="logo-main">
+          <span class="logo-red">RED</span><span class="logo-line">_LINE_</span><span class="logo-digital">DIGITAL</span>
+        </span>
+        <span class="logo-sub">websites · systems · communities</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="active">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="login-page">
+    <section class="login-hero">
+      <p class="page-number">05 / Client Login</p>
+
+      <div class="hero-intro">
+        <p class="eyebrow">Secure build system</p>
+        <h1>Access Your Project Hub</h1>
+        <p>
+          Sign in to view project notes, build updates, files, support messages,
+          and the systems connected to your digital setup.
+        </p>
+      </div>
+    </section>
+
+    <section class="login-layout">
+      <div class="portal-info">
+        <p class="eyebrow">Client Portal</p>
+
+        <h2>Everything connected in one clean place.</h2>
+
+        <p>
+          This portal is designed for clients and collaborators. Use it for active
+          builds, project checkpoints, requested changes, and aftercare.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <span>01</span>
+            <h3>Project Updates</h3>
+            <p>Check progress without digging through message threads.</p>
+          </div>
+
+          <div class="feature-card">
+            <span>02</span>
+            <h3>Files & Notes</h3>
+            <p>Keep important details and assets organised.</p>
+          </div>
+        </div>
+
+        <div class="start-project-box">
+          <p>Not set up yet?</p>
+          <h3>Start a project first, then your access point gets created.</h3>
+          <a href="contact.html">Start a Project</a>
+        </div>
+      </div>
+
+      <div class="login-panel">
+        <p class="panel-label">Auth Panel</p>
+
+        <h2>Client Access</h2>
+
+        <form id="loginForm">
+          <label for="email">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="client@email.com" 
+            required
+          />
+
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Enter your password" 
+            required
+          />
+
+          <div class="form-row">
+            <label class="remember">
+              <input type="checkbox" name="remember" />
+              <span>Remember Me</span>
+            </label>
+
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <button type="submit">Enter Portal</button>
+        </form>
+
+        <div class="panel-footer">
+          <p>Need access?</p>
+
+          <div>
+            <a href="contact.html">Request Access</a>
+            <a href="index.html">Back Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Red_Line_Digital. All rights reserved.</p>
+  </footer>
+
+  <!-- LOGIN PAGE JS -->
+  <script src="login.js"></script>
+</body>
+</html>
