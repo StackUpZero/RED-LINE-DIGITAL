@@ -1,19 +1,19 @@
-// Import Firebase authentication tools
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
+  signOut,
+  sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
-// Import the Firebase auth connection from firebase.js
 import { auth } from "./firebase.js";
 
-// Find login form elements
 const loginForm = document.getElementById("login-form");
 const emailInput = document.getElementById("login-email");
 const passwordInput = document.getElementById("login-password");
 const errorMessage = document.getElementById("login-error");
 const logoutButton = document.getElementById("logout-button");
+const resendVerificationButton = document.getElementById("resend-verification-button");
+const userEmail = document.getElementById("user-email");
 
 // LOGIN LOGIC
 if (loginForm) {
@@ -28,9 +28,20 @@ if (loginForm) {
     }
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
-      // Send client to private page after successful login
+      await user.reload();
+
+      if (!user.emailVerified) {
+        if (errorMessage) {
+          errorMessage.textContent = "Please verify your email before entering the client area.";
+        }
+
+        await signOut(auth);
+        return;
+      }
+
       window.location.href = "client.html";
     } catch (error) {
       console.error("Login failed:", error);
@@ -42,20 +53,57 @@ if (loginForm) {
   });
 }
 
-// PROTECT CLIENT PAGE
-onAuthStateChanged(auth, (user) => {
+// CLIENT PAGE PROTECTION
+onAuthStateChanged(auth, async (user) => {
   const isClientPage = window.location.pathname.includes("client.html");
-  const userEmail = document.getElementById("user-email");
 
-  if (isClientPage && !user) {
+  if (!isClientPage) return;
+
+  if (!user) {
     window.location.href = "login.html";
     return;
   }
 
-  if (user && userEmail) {
+  await user.reload();
+
+  if (!user.emailVerified) {
+    await signOut(auth);
+    window.location.href = "login.html";
+    return;
+  }
+
+  if (userEmail) {
     userEmail.textContent = user.email;
   }
 });
+
+// RESEND VERIFICATION EMAIL
+if (resendVerificationButton) {
+  resendVerificationButton.addEventListener("click", async () => {
+    const user = auth.currentUser;
+
+    if (!user) {
+      if (errorMessage) {
+        errorMessage.textContent = "Log in first, then resend verification.";
+      }
+      return;
+    }
+
+    try {
+      await sendEmailVerification(user);
+
+      if (errorMessage) {
+        errorMessage.textContent = "Verification email sent. Check your inbox.";
+      }
+    } catch (error) {
+      console.error("Could not resend verification:", error);
+
+      if (errorMessage) {
+        errorMessage.textContent = "Could not send verification email right now.";
+      }
+    }
+  });
+}
 
 // LOGOUT LOGIC
 if (logoutButton) {

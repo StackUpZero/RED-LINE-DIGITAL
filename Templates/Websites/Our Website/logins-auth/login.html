@@ -3,41 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="login.css" />
-
+  <link rel="stylesheet" href="login.css" />
+  
   <title>Red_Line_Digital | Login</title>
-
+  
 </head>
 
 <body>
-
+  
   <main class="login-box">
     <h1>Client Login</h1>
     <p class="subtitle">Enter your client access details.</p>
-
+    
     <form id="login-form">
       <label for="login-email">Email</label>
       <input
-        id="login-email"
-        type="email"
-        placeholder="client@email.com"
-        required
+      id="login-email"
+      type="email"
+      placeholder="client@email.com"
+      required
       />
-
+      
       <label for="login-password">Password</label>
       <input
-        id="login-password"
-        type="password"
-        placeholder="Password"
-        required
+      id="login-password"
+      type="password"
+      placeholder="Password"
+      required
       />
-
+      
       <p id="login-error"></p>
-
+      
       <button type="submit">Log In</button>
     </form>
+    <p>
+      No account yet?
+      <a href="signup.html">Create account</a>
+    </p>
   </main>
-
+  
   <script type="module" src="auth.js"></script>
 </body>
 </html>
